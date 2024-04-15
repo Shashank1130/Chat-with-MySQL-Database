@@ -23,7 +23,7 @@ https://github.com/Shashank1130/Chat-with-MySQL-Database/assets/107529934/11fc92
 The chatbot works by taking a user's natural language query, converting it into a SQL query using chatGPT and Mixtral, executing the query on a SQL database, and then presenting the results back to the user in natural language and also SQL query. This process involves several steps of data processing and interaction with the OpenAI API, Mixtral API and a SQL database, all seamlessly integrated into a Streamlit application.
 
 Consider the following diagram to understand how the different chains and components are built:
-![mysql-chains](https://github.com/Shashank1130/Chat-with-MySQL-Database/assets/107529934/8fc37ae2-19be-442e-a078-58547faac8e8)
+![mysql-chains](https://github.com/Shashank1130/Chat-with-MySQL-Database/assets/107529934/ecc2ad08-1345-4cdc-a5b7-c1bbf31d83d3)
 
 
 ## Use Cases
