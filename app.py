@@ -3,17 +3,13 @@ from dotenv import load_dotenv
 from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
-# The SQLDatabase adapter utility is a wrapper around a database connection.
-# SQLAlchemy is a Python SQL toolkit that allows developers to manage and access SQL databases using Python.
 from langchain_community.utilities.sql_database import SQLDatabase
 from langchain_core.output_parsers import StrOutputParser
-# from langchain.schema import AIMessage, HumanMessage
 from langchain_openai import ChatOpenAI
 from langchain_groq import ChatGroq
 import mysql.connector
 
-
-
+# Load secret variables from env file
 load_dotenv()
 
 # Function to establish connection with database
@@ -50,15 +46,11 @@ def get_sql_chain(db):
     prompt = ChatPromptTemplate.from_template(template=template)
     # Language model
     llm = ChatOpenAI()
-    # llm = ChatGroq(model="Llama2-70b-4096", temperature=0)
 
     # Tool -> This function to return the details/schema of the database 
     def get_schema(_):
         return db.get_table_info()
-    
-    # RunnablePassthrough.assign():- is a versatile tool that helps you to manage data and variables within the processing pipeline.
-        #-> RunnablePassthrough.assign() belongs to "Streamlit Runnables" API. These runnables provide building blocks got creating complex data processing workflows within your streamlit app
-        #-> Specifically, RunnablePassthrough.assign() allows you to assign the output of a function or another runnable to a variablr name within the pipeline. This variable name can then be used in subsequent steps of your processing chain
+        
     return (
         RunnablePassthrough.assign(schema=get_schema)
         | prompt
