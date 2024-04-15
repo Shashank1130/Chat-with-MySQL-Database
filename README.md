@@ -6,7 +6,9 @@ SQL Assistant and Chatbot is a powerful tool that allows users to interact with 
 ## How it Looks
 Just connect you database and start asking questions. It's that simple!
 
-https://github.com/Shashank1130/Chat-with-MySQL-Database/assets/107529934/ab33a85e-c65a-4b7e-a1db-e836108e883e
+https://github.com/Shashank1130/Chat-with-MySQL-Database/assets/107529934/11fc92ae-c6d3-4907-8129-809064bdefaa
+
+
 
 ## Features
 - **Natural Language Processing**: Uses OpenAI ChatGPT and Mistral LLM models to interpret and respond to user queries in natural language.
